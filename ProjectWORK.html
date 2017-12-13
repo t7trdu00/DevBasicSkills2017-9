@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title style="background-color:chocolate">DevBasicSkills2017-Team9 &copy; Son Trieu - Quan Le </title>
+        <meta auth="Son Trieu - Quan Le">
+        <meta class="DIN17SP">
+    
+    <style>
+        body {
+            background-color:bisque
+        }
+        h1 {
+            color:brown ;
+            text-align: center;
+        }
+        p {
+            font-family:black ;
+            font-size: 20px;
+        }
+        .div1 {
+            background-color:coral;
+            width: 500px;
+            height: 300px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+        .div2 {
+            background-color:darkkhaki;
+            width: 500px;
+            height: 1100px;
+            margin: 30px auto;
+            border: 2px solid black ;
+        }
+        .div3 {
+            background-color:chocolate;
+            width: 500px ;
+            height: 100px;
+            margin: 30px auto;
+            border: 2px auto;
+        }
+		.div4 {
+            background-color:aqua;
+            width : 500px;
+            height : 400px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+        .div5 {
+            background-color:plum ;
+            width: 500px;
+            height: 250px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+        
+    </style>
+        <script language="Javascript"> // work1
+                (function() {
+                    var ConvertBase = function (num) {
+                        return {
+                            from : function (baseFrom) {
+                                return {
+                                    to : function (baseTo) {
+                                        return parseInt(num, baseFrom).toString(baseTo);
+                                    }
+                                };
+                            }
+                        };
+                    };
+                // dec2bin
+                ConvertBase.dec2bin = function (num) {
+                    return ConvertBase(num).from(10).to(2);
+                };
+                // dec2hex
+                ConvertBase.dec2hex = function (num) {
+                    return ConvertBase(num).from(10).to(16);
+                };
+                // dec2oct
+                ConvertBase.dec2oct = function (num) {
+                    return ConvertBase(num).from(10).to(8);
+                };
+                // bin2dec
+                ConvertBase.bin2dec = function (num) {
+                    return ConvertBase(num).from(2).to(10);
+                };
+                // bin2hex
+                ConvertBase.bin2hex = function (num) {
+                    return ConvertBase(num).from(2).to(16);
+                };
+                // bin2oct
+                ConvertBase.bin2oct = function (num) {
+                    return ConvertBase(num).from(2).to(8);
+                };
+                // hex2dec
+                ConvertBase.hex2dec = function (num) {
+                    return ConvertBase(num).from(16).to(10);
+                };
+                // hex2bin
+                ConvertBase.hex2bin = function (num) {
+                    return ConvertBase(num).from(16).to(2);
+                };
+                // hex2oct 
+                ConvertBase.hex2oct = function (num) {
+                    return ConvertBase(num).from(16).to(8);
+                };
+                // oct2dec
+                ConvertBase.oct2dec = function (num) {
+                    return ConvertBase(num).from(8).to(10);
+                };
+                // oct2bin
+                ConvertBase.oct2bin = function (num) {
+                    return ConvertBase(num).from(8).to(2);
+                };
+                // oct2hex
+                ConvertBase.oct2hex = function (num) {
+                    return ConvertBase(num).from(8).to(16);
+                };
+                this.ConvertBase = ConvertBase ;
+                })(this) ;
+
+                function calculate()
+                {
+                    decimal = document.f1.t1.value
+                    binary = document.f1.t2.value
+                    hexadecimal = document.f1.t3.value
+                    octal = document.f1.t4.value
+                        if (decimal != 0 && binary == 0 && hexadecimal == 0 && octal == 0)
+                        {
+                            document.f1.t1.value = decimal
+                            document.f1.t2.value = ConvertBase.dec2bin(decimal)
+                            document.f1.t3.value = ConvertBase.dec2hex(decimal)
+                            document.f1.t4.value = ConvertBase.dec2oct(decimal)
+                        }
+                        else if (decimal == 0 && binary != 0 && hexadecimal == 0 && octal == 0)
+                        {
+                            document.f1.t1.value = ConvertBase.bin2dec(binary)
+                            document.f1.t2.value = binary
+                            document.f1.t3.value = ConvertBase.bin2hex(binary)
+                            document.f1.t4.value = ConvertBase.bin2oct(binary)
+                        }
+                        else if (decimal == 0 && binary == 0 && hexadecimal != 0 && octal == 0)
+                        {
+                            document.f1.t1.value = ConvertBase.hex2dec(hexadecimal)
+                            document.f1.t2.value = ConvertBase.hex2bin(hexadecimal)
+                            document.f1.t3.value = hexadecimal
+                            document.f1.t4.value = ConvertBase.hex2oct(hexadecimal)
+                        }
+                        else if (decimal == 0 && binary == 0 && hexadecimal == 0 && octal != 0)
+                        {
+                            document.f1.t1.value = ConvertBase.oct2dec(octal)
+                            document.f1.t2.value = ConvertBase.oct2bin(octal)
+                            document.f1.t3.value = ConvertBase.oct2hex(octal)
+                            document.f1.t4.value = octal
+                        }
+                        else
+                        {
+                            document.f1.t1.value = "PLease enter just 1 value!!!"
+                            document.f1.t2.value = "Please enter just 1 value!!!"
+                            document.f1.t3.value = "Please enter just 1 value!!!"
+                            document.f1.t4.value = "Please enter just 1 value!!!"
+                        }
+                    }
+                    function reset()
+                    {
+                        document.f1.t1.value = 0
+                        document.f1.t2.value = 0
+                        document.f1.t3.value = 0 
+                        document.f1.t4.value = 0
+                    }
+            </script>
+			<script> //work 2
+                function myfunction() {
+				var cleartable= document.getElementById("tab1");
+				cleartable.parentNode.removeChild(cleartable);
+                        }
+            </script>
+			<script> // work3
+				var permutationnumber = new Array();
+				function permutationcalculate()
+				{
+					var n = parseInt(document.getElementById("txtN").value);
+					var i;
+					for (i=0; i<n ; i++)
+					{
+					permutationnumber[i] = i+1;
+					}
+					permutate(permutationnumber, n);
+				}
+				var count=0;
+				function permutate(beginpart, n)
+				{
+					if (n==1)
+					{
+						var str="";
+						count++;
+						str+=count.toString() + ". ";
+						var i;
+						for (i=0; i< beginpart.length; i ++){
+						str+= beginpart[i].toString() + " ";
+						}
+						str+="<br>";
+						document.write(str);
+					}
+					else 
+						{
+						var i;
+						for (i=n-1; i>=0; i--) 
+							{
+								SWAP(i,n-1);
+								permutate(beginpart, n-1);
+								SWAP(i,n-1);
+							}
+						}
+				}
+				function SWAP(index1, index2)
+				{
+					var temp = permutationnumber[index1] ;
+					permutationnumber[index1] = permutationnumber[index2];
+					permutationnumber[index2] = temp ;
+				}
+			</script>
+			<script> //work 4  
+                function truthtable(){
+                    var firstnum = document.getElementById("firstnum").value;
+                    var secondnum = document.getElementById("secondnum").value;
+                        if (firstnum == 1 && secondnum == 1){
+                            document.getElementById("and").innerHTML = "1(TRUE)"
+                        }
+                        else
+                        {
+                            document.getElementById("and").innerHTML = "0(FALSE)"
+                        }
+
+                        if (firstnum == 1 || secondnum == 1){
+                            document.getElementById("or").innerHTML = "1(TRUE)"
+                        }
+                        else if (firstnum == 1 || secondnum == 0){
+                            document.getElementById("or").innerHTML = "1(TRUE)"
+                        }
+                        else if (firstnum == 0 || secondnum == 1)
+                        {
+                            document.getElementById("or").innerHTML = "1(TRUE)"
+                        }     
+                        else
+                        {
+                            document.getElementById("or").innerHTML = "0(FALSE)"
+                        }
+
+                        if (firstnum == 1 && secondnum == 1)
+                        {
+                            document.getElementById("xor").innerHTML = "0(FALSE)"
+                        }
+                        else if (firstnum == 1 && secondnum == 0){
+                            document.getElementById("xor").innerHTML = "1(TRUE)"
+                        }
+                        else if (firstnum == 0 && secondnum == 1)
+                        {
+                            document.getElementById("or").innerHTML = "1(TRUE)"
+                        }
+                        else
+                        {
+                        document.getElementById("xor").innerHTML = "0(FALSE)"
+                        }
+                        }
+            </script>
+            <script> // work 5
+               function randomizenumber() {
+               var x = Math.floor((Math.random()* 100) + 1 );
+                document.getElementById("random").innerHTML = x ;
+               }
+            </script>
+    </head>
+    <body>
+        <div class="div1">Number Convertor
+        <form name=f1>
+            <pre>
+                DECIMAL <input type=text name=t1 value=0><br>
+                BINARY <input type=text name=t2 value=0><br>
+                HEXADECIMAL <input type=text name=t3 value=0><br>
+                OCTAL <input type=text name=t4 value=0><br>
+                <input type=button name="b1" value="Convert" onclick="calculate()">
+                <input type=button name="b2" value="Reset" onclick="reset()">
+            </pre>
+        </form>
+        </div>
+        <div class="div2">Number System Output
+            <style>
+                table {
+                    border-collapse: collapse ;
+                }
+                table,td ,th {
+                    border: solid black;
+                }
+                th, td {
+                    font-weight: bold ;
+                    text-align: center;
+                }
+            </style>
+            <table id="tab1">
+                    <thead>
+                        <tr>
+                            <th style="width:25%">
+                                Decimals
+                            <br>
+                                (Base 10)
+                            </th>
+                            <th style="width:25%">
+                                Binary
+                            <br>
+                                (Base 2)
+                            </th>
+                            <th style="width:25%">
+                                HexaDecimals
+                                <br>
+                                (Base 16)
+                            </th>
+                            <th style="width:25%">
+                                Octal
+                                <br>
+                                (Base 8)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                000<br>
+                                001<br>
+                                002<br>
+                                003<br>
+                                004<br>
+                                005<br>
+                                006<br>
+                                007<br>
+                                008<br>
+                                009<br>
+                                010<br>
+                                011<br>
+                                012<br>
+                                013<br>
+                                014<br>
+                                015
+                            </td>
+                            <td>
+                                00000000<br>
+                                00000001<br>
+                                00000010<br>
+                                00000011<br>
+                                00000100<br>
+                                00000110<br>
+                                00000111<br>
+                                00001000<br>
+                                00001001<br>
+                                00001010<br>
+                                00001011<br>
+                                00001100<br>
+                                00001101<br>                                     
+                                00001110<br>
+                                00001111
+                            </td>
+                            <td>
+                                0<br>
+                                1<br>
+                                2<br>
+                                3<br>
+                                4<br>
+                                5<br>
+                                6<br>
+                                7<br>
+                                8<br>
+                                9<br>
+                                A<br>
+                                B<br>
+                                C<br>
+                                D<br>
+                                E<br>
+                                F
+                            </td>
+                            <td>
+                                000<br>
+                                001<br>
+                                002<br>
+                                003<br>
+                                004<br>
+                                005<br>
+                                006<br>
+                                007<br>
+                                010<br>
+                                011<br>
+                                012<br>
+                                013<br>
+                                014<br>
+                                015<br>
+                                016<br>
+                                017
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                016<br>
+                                017<br>
+                                018<br>
+                                019<br>
+                                020<br>
+                                021<br>
+                                022<br>
+                                023<br>
+                                024<br>
+                                025<br>
+                                026<br>
+                                027<br>
+                                028<br>
+                                029<br>
+                                030<br>
+                                031
+                            </td>
+                            <td>
+                                00010000<br>
+                                00010001<br>
+                                00010010<br>
+                                00010011<br>
+                                00010100<br>
+                                00010101<br>
+                                00010110<br>
+                                00010111<br>
+                                00011000<br>
+                                00011001<br>
+                                00011010<br>
+                                00011011<br>
+                                00011100<br>
+                                00011101<br>
+                                00011110<br>
+                                00011111
+                            </td>
+                            <td>
+                                10<br>
+                                11<br>
+                                12<br>
+                                13<br>
+                                14<br>
+                                15<br>
+                                16<br>
+                                17<br>
+                                18<br>
+                                19<br>
+                                1A<br>
+                                1B<br>
+                                1C<br>
+                                1D<br>
+                                1E<br>
+                                1F
+                            </td>
+                            <td>
+                                020<br>
+                                021<br>
+                                022<br>
+                                023<br>
+                                024<br>
+                                025<br>
+                                026<br>
+                                027<br>
+                                030<br>
+                                031<br>
+                                032<br>
+                                033<br>
+                                034<br>
+                                035<br>
+                                036<br>
+                                037
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                032<br>
+                                033<br>
+                                034<br>
+                                035<br>
+                                036<br>
+                                037<br>
+                                038<br>
+                                039<br>
+                                040<br>
+                                041<br>
+                                042<br>
+                                043<br>
+                                044<br>
+                                045<br>
+                                046<br>
+                                047
+                            </td>
+                            <td>
+                                00100000<br>
+                                00100001<br>
+                                00100010<br>
+                                00100011<br>
+                                00100100<br>
+                                00100101<br>
+                                00100110<br>
+                                00100111<br>
+                                00101000<br>
+                                00101001<br>
+                                00101010<br>
+                                00101011<br>
+                                00101100<br>
+                                00101101<br>
+                                00101110<br>
+                                00101111
+                            </td>
+                            <td>
+                                20<br>
+                                21<br>
+                                22<br>
+                                23<br>
+                                24<br>
+                                25<br>
+                                26<br>
+                                27<br>
+                                28<br>
+                                29<br>
+                                2A<br>
+                                2B<br>
+                                2C<br>
+                                2D<br>
+                                2E<br>
+                                2F
+                            </td>
+                            <td>
+                                040<br>
+                                041<br>
+                                042<br>
+                                043<Br>
+                                044<br>
+                                045<br>
+                                046<br>
+                                047<br>
+                                050<br>
+                                051<br>
+                                052<br>
+                                053<br>
+                                054<br>
+                                055<br>
+                                056<Br>
+                                057
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                048<br>
+                                049<br>
+                                050
+                            </td>
+                            <td>
+                                00110000<br>
+                                00110001<br>
+                                00110010
+                            </td>
+                            <td>
+                                30<br>
+                                31<br>
+                                32
+                            </td>
+                            <td>
+                                060<br>
+                                061<br>
+                                062
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <button onclick="myfunction()">Clear</button>      
+                </div>                  
+		<div class="div3"> Permutations		
+			<p> Type something in </p>
+			<input type="text" id="txtN" placeholder="Type one number from 1 to 10 :" />
+			<input type="button" value="Calculate" id="btnOK" onclick="permutationcalculate()" />
+        </div>
+        <div class="div4"> Truth Table 
+                <br>
+                <input id = "firstnum">Type a 0 or 1 here
+                <br>
+                <input id = "secondnum">Type a 0 or 1 here
+                <br>
+                <button onclick = "truthtable()">"Click Here to get the Statements"</button>
+                <p>Answer is:</p>
+                <p>OR statement is:</p>  
+                <p id="or"></p>
+                <p>AND statement is :</p>  
+                <p id="and"></p>
+                <p>XOR statement is:</p>  
+                <p id="xor"></p>
+        </div>
+        <div class="div5"> Random Number        
+            <p>This is a number generator between 1 to 100 </p>
+            <br>
+            <p>Please click the button to generate random number</p>
+            <button onclick="randomizenumber()">Click and see!!!</button>
+            <p id="random"></p>
+        </div>  
+	</body>
+	
+                
+</html>
